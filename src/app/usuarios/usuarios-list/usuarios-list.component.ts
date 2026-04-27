@@ -11,6 +11,8 @@ import { UsuariosService } from '../usuarios.service';
 export class UsuariosListComponent implements OnInit {
 
   usuarios: Array<Usuarios> = [];
+  selected: boolean = false;
+  selectedUsuario!: Usuarios;
 
   constructor(private usuariosService: UsuariosService, private cdr: ChangeDetectorRef) { }
 
@@ -23,6 +25,11 @@ export class UsuariosListComponent implements OnInit {
       this.usuarios = usuarios;
       this.cdr.detectChanges();
     });
+  }
+
+  onSelected(usuario: Usuarios): void { 
+    this.selected = true;
+    this.selectedUsuario = usuario;
   }
 
 }

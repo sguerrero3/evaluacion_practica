@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ usuario.name }}</p>
+
+  <div class="row">
+   <div class="col-6">
+     <div class="thumb d-flex">
+       <img
+         src="{{ usuario.avatarUrl }}"
+         alt="{{ usuario.username }}"
+         class="mx-auto"
+        
+       />
+     </div>
+   </div>
+   <div class="col-6">
+     <dl>
+       <dt>Nombre</dt>
+       <dd>{{ usuario.name }}</dd>
+       <hr />
+       <dt>Email</dt>
+       <dd>{{ usuario.email }}</dd>
+       <hr />
+       <dt> Rol </dt>
+       <dd>{{ usuario.role }}</dd>
+       <hr />
+       <dt>Locación</dt>
+       <dd class="caption">{{ usuario.location }}</dd>
+       <hr />
+       <dt class="bold">Repositorios</dt>
+       <dd>
+          <ul>
+            <li *ngFor="let repo of usuario.repoIds">{{ repo }}</li>
+          </ul>
+       </dd>
+     </dl>
+   </div>
+ </div>
+</div>

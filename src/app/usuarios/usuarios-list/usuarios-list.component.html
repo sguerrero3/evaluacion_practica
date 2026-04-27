@@ -1,10 +1,16 @@
 <div class="container">
   <h1 class="text-center my-5">Usuarios</h1>
 
+  <div *ngIf="selected">
+    <app-usuarios-detail [usuario]="selectedUsuario"></app-usuarios-detail>
+  </div>
+
+  <hr />
+
   <div class="container-fluid">
     <div class="row g-5">
       <div class="col-12 col-sm-6 col-lg-3" *ngFor="let usuario of usuarios">
-        <div class="card p-2 mx-auto" style="width: 15rem; height: 20rem">
+        <div class="card p-2 mx-auto" style="width: 15rem; height: 20rem" (click)="onSelected(usuario)">
           <img class="card-img" src="{{ usuario.avatarUrl }}" alt="{{ usuario.username }}" />
           <div class="card-body">
             <h5 class="card-title">{{ usuario.username }}</h5>
