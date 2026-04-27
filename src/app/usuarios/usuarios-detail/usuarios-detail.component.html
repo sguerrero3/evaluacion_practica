@@ -29,7 +29,11 @@
        <dt class="bold">Repositorios</dt>
        <dd>
           <ul>
-            <li *ngFor="let repo of usuario.repoIds">{{ repo }}</li>
+            <li *ngFor="let repo of usuario.repoIds">
+              <a routerLink="/repositorios/{{ repo }}" class="text-primary text-decoration-underline" style="cursor: pointer;">
+                {{ repo }}
+              </a>
+            </li>
           </ul>
        </dd>
      </dl>

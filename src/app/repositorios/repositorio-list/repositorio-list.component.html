@@ -1,5 +1,3 @@
-
-
 <div class="container">
 
   <h1 class="text-center my-5">Repositorios</h1>
@@ -21,9 +19,9 @@
           <td>{{ repositorio.name }}</td>
           <td>{{ repositorio.language }}</td>
           <td>{{ repositorio.stars }}</td>
-          <td>{{ repositorio.createdAt | date }}</td>
+          <td>{{ repositorio.createdAt }}</td>
           <td>
-            <button class="btn btn-secondary">Detalles</button>
+            <button class="btn btn-secondary" routerLink="/repositorios/{{ repositorio.id }}">Detalles</button>
           </td>
         </tr>
       </tbody>

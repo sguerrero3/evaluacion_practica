@@ -1,0 +1,49 @@
+<div class="container my-5">
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+      <h1 class="display-5 fw-bold text-black mb-1">{{ repositorio.name }}</h1>
+      <p class="text-muted">
+        <span class="badge bg-secondary me-2">ID: {{ repositorio.id }}</span>
+        <i class="bi bi-calendar3"></i> Creado el {{ repositorio.createdAt }}
+      </p>
+    </div>
+    <button class="btn btn-outline-secondary btn-sm" onclick="history.back()">
+      Volver
+    </button>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <div class="row">
+
+        <div class="col-12 mb-4">
+          <h5 class="text-uppercase text-muted small fw-bold">Descripción</h5>
+          <p class="lead">
+            {{ repositorio.description }}
+          </p>
+        </div>
+
+        <hr class="my-3 opacity-10">
+
+        <div class="col-12 mb-4">
+          <h5 class="text-uppercase text-muted small fw-bold">Lenguaje</h5>
+          <span class="badge rounded-pill bg-info text-dark px-3">
+            {{ repositorio.language }}
+          </span>
+        </div>
+
+        <hr class="my-3 opacity-10">
+
+        <div class="col-12 mb-6">
+          <h5 class="text-uppercase text-muted small fw-bold">Dueño</h5>
+          <a routerLink="/usuarios" class="text-primary text-decoration-underline" style="cursor: pointer;">
+            {{ repositorio.ownerId }}
+          </a>
+        </div>
+
+
+        
+        </div>
+    </div>
+  </div>
+</div>
