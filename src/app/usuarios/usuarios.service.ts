@@ -13,8 +13,8 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  getUsuarios(): Observable<Usuarios> {
-    return this.http.get<Usuarios>(this.apiUrl);
+  getUsuarios(): Observable<Usuarios[]> {
+    return this.http.get<Usuarios[]>(this.apiUrl);
   }
 
 }
